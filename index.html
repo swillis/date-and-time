@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Listora - Add your event</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+
+    <link href="css/bootstrap-formhelpers.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://developers.google.com/maps/documentation/javascript/examples/default.css">
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Date and time -->
+
+      <h3>Date and time</h3>
+
+      <form class="form-inline date" role="form">
+
+        <div class='row'>
+
+          <!-- Selector -->
+
+          <div class='col-lg-3 splitter'>
+            <div class="form-group">
+              <select class="form-control event-freq">
+                <option>One or more dates</option>
+                <option>Weekly</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Date picker -->
+
+          <div class='col-lg-9 multiple-dates'>
+            <div class='original'>
+            <div class='row more-dates env'>
+
+              <div class='col-lg-2'>
+                 <div class="form-group">
+                  <p>Start date:</p>
+                </div>
+              </div>
+
+              <div class='col-lg-3'>
+
+                <div class="form-group">
+
+                  <div class="bfh-datepicker">
+                    <div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-datepicker-calendar">
+                      <table class="calendar table table-bordered">
+                        <thead>
+                          <tr class="months-header">
+                            <th class="month" colspan="4">
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                              <span></span>
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                            </th>
+                            <th class="year" colspan="3">
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                              <span></span>
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                            </th>
+                          </tr>
+                          <tr class="days-header">
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+
+                <button type="button" class="btn btn-xs btn-success add-date"><i class="glyphicon glyphicon-plus"></i> New date</button>
+
+                <button type="button" class="btn btn-xs btn-danger spec remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+
+              </div>
+
+              <!-- Start time -->
+
+              <div class='col-lg-6 recurrent'>
+
+              <div class='origin'>
+                <div class='row more-times'>
+
+                  <div class='col-lg-2'>
+                 <div class="form-group">
+                  <p>Start time:</p>
+                </div>
+              </div>
+
+              <div class='col-lg-4 time'>
+
+                <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+
+              </div>
+
+              <!-- End time -->
+
+              <div class='col-lg-2'>
+                 <div class="form-group">
+                  <p>End time:</p>
+                </div>
+              </div>
+
+              <div class='col-lg-4 time'>
+
+                <div class="form-group time">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+
+              </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!-- time end -->
+
+          </div>
+          </div>
+          
+
+        </div>
+        
+        </div>
+
+        <div class='weekly'>
+
+          <div class='row'>
+
+            <div class='col-lg-6 env week-rows'>
+
+              <div class='row'>
+
+
+
+              <div class="col-lg-12 btn-toolbar">
+
+                <p>On:</p>
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default day-tab sun" data-toggle="button">Sun</button>
+                  <button type="button" class="btn btn-default day-tab mon" data-toggle="button">Mon</button>
+                  <button type="button" class="btn btn-default day-tab tue" data-toggle="button">Tue</button>
+                  <button type="button" class="btn btn-default day-tab wed" data-toggle="button">Wed</button>
+                  <button type="button" class="btn btn-default day-tab thu" data-toggle="button">Thu</button>
+                  <button type="button" class="btn btn-default day-tab fri" data-toggle="button">Fri</button>
+                  <button type="button" class="btn btn-default day-tab sat" data-toggle="button">Sat</button>
+                </div>
+
+              </div>
+
+              </div>
+
+              <div class='row'>
+
+            <div class='col-lg-3'>
+               <div class="form-group">
+                <p>Ends on:&nbsp;&nbsp;<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked></p>
+              </div>
+            </div>
+
+            <div class='col-lg-5'>
+              <div class="form-group">
+
+                <div class="bfh-datepicker">
+                  <div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="text" class="form-control" readonly>
+                  </div>
+                  <div class="bfh-datepicker-calendar">
+                    <table class="calendar table table-bordered">
+                      <thead>
+                        <tr class="months-header">
+                          <th class="month" colspan="4">
+                            <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                            <span></span>
+                            <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                          </th>
+                          <th class="year" colspan="3">
+                            <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                            <span></span>
+                            <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                          </th>
+                        </tr>
+                        <tr class="days-header">
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class='col-lg-3'>
+              <p>Never:&nbsp;&nbsp;<label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></label></p>
+            </div>
+          </div>
+
+          <div class='row'>
+
+            <div class='col-lg-7'>
+
+              <select class="form-control">
+                <option>Every week</option>
+                <option>Every 2 weeks</option>
+                <option>Every 3 weeks</option>
+                <option>Every 4 weeks</option>
+              </select>
+
+            </div>
+          
+          </div>
+              
+            </div>
+
+            <div class='col-lg-6'>
+
+              <div class='row weekly-event-dates sun env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Sunday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              <div class='row weekly-event-dates mon env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Monday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              <div class='row weekly-event-dates tue env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Tuesday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              <div class='row weekly-event-dates wed env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Wednesday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              <div class='row weekly-event-dates thu env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Thursday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              <div class='row weekly-event-dates fri env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Friday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              <div class='row weekly-event-dates sat env'>
+                <div class='col-lg-2'>
+                  <p class='day'>Saturday</p>
+                </div>
+                <div class='col-lg-1'>
+                  <p>Start time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-danger remove"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+                </div>
+                <div class='col-lg-1'>
+                  <p>End time:</p>
+                </div>
+                <div class='col-lg-3'>
+                  <div class="form-group">
+                  <div class="bfh-timepicker">
+                    <div class="input-group bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                      <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="bfh-timepicker-popover">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="hour">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                            <td class="separator">:</td>
+                            <td class="minute">
+                              <a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>
+                              <input type="text" class="input-mini" readonly><br>
+                              <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-xs btn-primary add-time"><i class="glyphicon glyphicon-plus"></i> New time</button>
+                </div>
+              </div>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap-formhelpers-datepicker.en_US.js"></script>
+    <script src="js/bootstrap-formhelpers-datepicker.js"></script>
+    <script src="js/bootstrap-formhelpers-timepicker.js"></script>
+    <script src="js/bootstrap-formhelpers-currencies.en_US.js"></script>
+    <script src="js/bootstrap-formhelpers-currencies.js"></script>
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>
